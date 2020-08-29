@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Poppins';
+  background-color: #f8f9fa;
+}
+
 .App {
   text-align: center;
 }
@@ -7,32 +18,85 @@
   pointer-events: none;
 }
 
+.logo-image {
+  height: 60px;
+  width: 120px;
+}
+
+form .form-control {
+  border-radius: 40px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+.h-100vh {
+  min-height: 100vh !important;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar-login {
+  width: 305px;
+  padding: 10px;
+  padding-bottom: 0px;
+}
+
+.navbar-login-session {
+  padding: 10px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+.icon-size {
+  font-size: 87px;
+}
+
+.bg-light-grey {
+  background-color: #FBFBFB !important;
+}
+
+.custom-text-fields-register {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+table tbody tr {
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 767px) {
+  .custom-text-fields-register {
+    display: block;
   }
-  to {
-    transform: rotate(360deg);
+  #main-app-nav .desktop-links a.nav-link {
+    padding: 5px !important;
   }
+}
+
+input[type="radio"] {
+  position: unset !important;
+  left: 0 !important;
+  opacity: 1 !important;
+  height: 20px;
+  width: 20px;
+}
+
+.font-20px {
+  font-size: 20px !important;
+}
+
+.font-40px {
+  font-size: 40px !important;
+}
+
+.card-hover {
+  border: 1px solid grey;
+  cursor: pointer;
+}
+
+.card-hover:hover {
+  border: 2px solid green;
 }
