@@ -9,9 +9,12 @@ export default function CheckSession({ children }) {
   console.log(exp);
   let date = Date.now();
   useEffect(() => {
-    setTimeout(() => {
-      setShowLoader(true);
-    }, exp * 1000 - date);
+    if (!!exp) {
+      setTimeout(() => {
+        setShowLoader(true);
+      }, exp * 1000 - date);
+    }
+
     //eslint-disable-next-line
   }, []);
 
