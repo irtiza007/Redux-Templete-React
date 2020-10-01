@@ -7,9 +7,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 <li>Redux Persist State</li>
 <li>Redux middleswares</li>
 <li>Redux thunk</li>
-<li>API calls using axios, default token with every request, base url fixed for every request you can change for customaly </li>
+<li>API calls using axios, default token with every request, base url fixed for every request you can change and customize </li>
 <li>Functional Reusable Components</li>
-<li>Immutibility using immer.js and many more</li>
+<li>Immutibility using immer.js</li>
+<li>A decent folder structure, Dark mode and many more</li>
 </ul>
 ## Available Scripts
 
