@@ -10,6 +10,7 @@ export default function SessionLoader() {
       dispatch(resetContent());
       history.push('/login');
     }, 5000);
+    // eslint-disable-next-line
   }, []);
   return (
     <div className='d-flex justify-content-center align-item-center h-100vh'>

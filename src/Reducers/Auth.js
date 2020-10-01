@@ -3,6 +3,7 @@ const initialstate = {
   userToken: '',
   user: {},
   isAuthenticated: false,
+  darkMode: true,
 };
 
 const LoginReducer = produce((state = initialstate, action) => {
@@ -15,6 +16,10 @@ const LoginReducer = produce((state = initialstate, action) => {
     }
     case 'LOGOUT': {
       return initialstate;
+    }
+    case 'SET_DARK_MODE': {
+      state.darkMode = action.payload;
+      return state;
     }
 
     default:

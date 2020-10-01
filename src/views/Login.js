@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import CustomTextField from '../components/customTextField';
+import CustomTextField from '../components/CustomTextField';
 import CustomButton from '../components/CustomButton';
 import { setAuthInfo } from '../Action/Auth';
-import { createNotification } from '../components/toast';
+import { createNotification } from '../components/Toast';
 import api from '../apiCalls/api';
 import { useDispatch, useSelector } from 'react-redux';
+import DarkMode from '../components/DarkMode';
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -14,9 +15,7 @@ export default function Login() {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const history = useHistory();
-  const { userToken, isAuthenticated } = useSelector(
-    (state) => state.rootReducer.Auth
-  );
+  const { userToken, isAuthenticated } = useSelector((state) => state.Auth);
   useEffect(() => {
     if (userToken && isAuthenticated) {
       history.push('/');
@@ -24,6 +23,7 @@ export default function Login() {
     return () => {
       console.log('USER IS ALREADY LOGGED IN');
     };
+    // eslint-disable-next-line
   }, [isAuthenticated]);
 
   const authenticate = (e) => {
@@ -47,7 +47,7 @@ export default function Login() {
           setLoading(false);
           createNotification(
             'error',
-            err.data.message ?? 'Something went wrong pleazse try again later'
+            err.data?.message ?? 'Something went wrong please try again later'
           );
         });
     }
@@ -57,7 +57,11 @@ export default function Login() {
       <div className='container col-sm-12 d-flex justify-content-center align-items-center h-100vh'>
         <div className='col-sm-6 shadow'>
           <div className='p-5'>
-            <h1>Log In</h1>
+            <div className='d-flex w-100 justify-content-between'>
+              <h1>Log In</h1>
+              <DarkMode />
+            </div>
+
             <form autoComplete={false} onSubmit={authenticate}>
               <fieldset>
                 <CustomTextField

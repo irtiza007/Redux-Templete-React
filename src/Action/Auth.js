@@ -11,3 +11,10 @@ export const resetContent = () => (dispatch) => {
     type: 'LOGOUT',
   });
 };
+
+export const changeDarkMode = (value) => (dispatch) => {
+  dispatch({
+    type: 'SET_DARK_MODE',
+    payload: value,
+  });
+};

@@ -4,20 +4,21 @@ import Login from './views/Login';
 import Dashboard from './views/Dashboard';
 import { Switch, Route } from 'react-router-dom';
 import ProtectedRoutes from './hoc/ProtectedRoutes';
-import { ToastContainer } from './components/toast';
+import { ToastContainer } from './components/Toast';
 import CheckSession from './hoc/CheckSession';
-
+import { useSelector } from 'react-redux';
 export default function Router() {
+  const { darkMode } = useSelector((state) => state.Auth);
   return (
-    <div className='h-100vh bg-dark text-light'>
+    <div className={`h-100vh ${darkMode ? 'bg-dark text-light' : ''}`}>
       <ToastContainer />
       <Switch>
         <Route exact path='/login' component={Login} />
-        <CheckSession>
-          <ProtectedRoutes>
+        <ProtectedRoutes>
+          <CheckSession>
             <Route exact path='/' component={Dashboard} />
-          </ProtectedRoutes>
-        </CheckSession>
+          </CheckSession>
+        </ProtectedRoutes>
       </Switch>
     </div>
   );

@@ -4,9 +4,7 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 
 const ProtectedRoutes = ({ children }) => {
-  const { userToken, isAuthenticated } = useSelector(
-    (state) => state.rootReducer.Auth
-  );
+  const { userToken, isAuthenticated } = useSelector((state) => state.Auth);
   const history = useHistory();
   useEffect(() => {
     if (userToken && isAuthenticated) {
@@ -15,6 +13,7 @@ const ProtectedRoutes = ({ children }) => {
       delete axios.defaults.headers.common['Authorization'];
       history.push('/login');
     }
+    // eslint-disable-next-line
   }, [history]);
   return <>{children}</>;
 };
