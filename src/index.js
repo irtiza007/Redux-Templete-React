@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import axios from 'axios';
 // import { InfoProvider } from './context/globalContext';
 if (process.env.API) axios.defaults.baseURL = process.env.API;
-axios.defaults.baseURL = 'https://realestate.hacorps.tech/api';
+// axios.defaults.baseURL = '';
 ReactDOM.render(
   <React.StrictMode>
     <App />
